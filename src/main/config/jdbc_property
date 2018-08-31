@@ -1,0 +1,10 @@
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://127.0.0.1:3306/demo?allowMultiQueries=true&useSSL=true
+jdbc.user=root
+jdbc.password=root
+
+
+sqlserver.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+sqlserver.url=jdbc:sqlserver://127.0.0.1:1433;DatabaseName=mybatis_01
+sqlserver.user=admin
+sqlserver.password=admin

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.htp.dao.UserMapper">
+
+	<resultMap id="usersMap" type="java.util.Map">
+		<id column="name" property="name" jdbcType="VARCHAR" />
+		<id column="address" property="address" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<resultMap id="usersMapById" type="java.util.Map">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="address" property="address" />
+	</resultMap>
+
+	<select id="getUsers" resultMap="usersMap">
+		select name,address from user
+	</select>
+
+	<select id="getUserById" resultType="com.htp.bean.User">
+		select id,name,address from user
+		where 1=1
+		<if test="id != null or id !=''">
+			and id = #{id}
+		</if>
+
+	</select>
+
+</mapper>
